@@ -4,11 +4,15 @@ Is a tool that lets you get the difference of two binary files,diff-bin automate
 
 Use:
 
-diff-bin fileA fileB
+    diff-bin fileA fileB
 
--or-
+  -or-
 
-diff-bin fileA fileB > file.diff
+    diff-bin fileA fileB > file.diff
+
+To compile use :
+
+    gcc -o diff-bin diff-bin.c
 
 Author : Cristian Velez Ruiz (ainokila)
 
