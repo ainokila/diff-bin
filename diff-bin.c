@@ -20,6 +20,7 @@ void help(){
 
 }
 
+//Temporary method to see if files exist
 bool isFiles(char *a,char *b){
 
 	FILE* inputA;
@@ -51,15 +52,21 @@ bool isFiles(char *a,char *b){
 int main(int arg , char *argv[]){
 
 	int success = -1;
-	char bufferA[250];
-	char bufferB[250];
-	char bufferDiff[] = "diff /tmp/fileDiffB /tmp/fileDiffA";
-	
+
 	if ( arg != 3 ){
 		help();
 	}else{
 
 		if(isFiles(argv[1],argv[2])){
+
+			char *bufferA = (char*)malloc((strlen(argv[1])+40)*sizeof(char)) ;
+			char *bufferB = (char*)malloc((strlen(argv[2])+40)*sizeof(char)) ;
+			char bufferDiff[] = "diff /tmp/fileDiffB /tmp/fileDiffA";
+
+			if(bufferA == NULL || bufferB == NULL ){
+				perror ("Error to reserve memory");
+				exit(-1);
+			}
 
 			sprintf (bufferA,"xxd %s > /tmp/fileDiffA",argv[1]);
 			sprintf (bufferB,"xxd %s > /tmp/fileDiffB",argv[2]);
@@ -72,6 +79,9 @@ int main(int arg , char *argv[]){
 			//Clear the files
 			system("rm /tmp/fileDiffA");
 			system("rm /tmp/fileDiffB");
+
+			free(bufferA);
+			free(bufferB);
 
 		}
 		
