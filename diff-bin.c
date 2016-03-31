@@ -61,7 +61,7 @@ int main(int arg , char *argv[]){
 
 			char *bufferA = (char*)malloc((strlen(argv[1])+40)*sizeof(char)) ;
 			char *bufferB = (char*)malloc((strlen(argv[2])+40)*sizeof(char)) ;
-			char bufferDiff[] = "diff /tmp/fileDiffB /tmp/fileDiffA";
+			char bufferDiff[] = "diff -y /tmp/fileDiffB /tmp/fileDiffA";
 
 			if(bufferA == NULL || bufferB == NULL ){
 				perror ("Error to reserve memory");
