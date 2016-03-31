@@ -21,6 +21,6 @@ This is not the difference in the files :
 
 This is the difference in the files ( | ) :
 
-        00000d0: a40e 0000 0000 0000 a40e  ........... |	00000d0: d40e 0000 0000 0000 d40e  ...........
+        00000d0: a40e 0000 0000 0000 a40e    ..........   |	 00000d0: d40e 0000 0000 0000 d40e  ...........
 
 Author : Cristian Velez Ruiz (ainokila)
